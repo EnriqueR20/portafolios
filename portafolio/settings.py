@@ -80,7 +80,7 @@ DATABASES = {
         'NAME': 'railway',
         'USER': 'root',
         'PASSWORD': 'nYBUR87aB5fjlLuZXoXL.',
-        'HOST': '@containers-us-west-160.railway.app',
+        'HOST': 'containers-us-west-160.railway.app',
         'PORT': '7316',
     }
 }
