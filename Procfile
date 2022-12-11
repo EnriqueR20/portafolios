@@ -1,4 +1,1 @@
-
-
-
-web: python manage.py migrate && gunicorn portafolios.wsgi
+web: python manage.py migrate && gunicorn portafolio.wsgi
