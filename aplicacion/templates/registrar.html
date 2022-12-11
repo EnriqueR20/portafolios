@@ -1,0 +1,100 @@
+{% load static %}
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Bienvenido</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" href="{% static 'css/logincss.css' %}">
+
+	</head>
+	<body>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-6 col-lg-5">
+					<div class="login-wrap p-4 p-md-5">
+		      	<div class="icon d-flex align-items-center justify-content-center">
+		      		<span class="fa fa-user-o"></span>
+		      	</div>
+                	<h3 class="text-center mb-4">Creando Cuenta</h3>
+{% block contend %}
+                        {% for message in messages %}
+                            <strong>Alerta:</strong> {{ message }}.
+                        {% endfor %}
+        <div class="row">
+            <div class="col-lg-12">
+                <form id="contactForm" action="" method="POST">
+                    {% csrf_token %}
+
+                    <div class="form-group">
+                        <label class="label-control" for="Husuario">Usuario</label>
+                        <input type="text" class="form-control rounded-left" id="Husuario" name="Husuario" required
+                            autocomplete="off">
+
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label-control" for="Hcorreo">Correo</label>
+                        <input type="email" class="form-control rounded-left" id="Hcorreo" name="Hcorreo" required
+                            autocomplete="off">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label-control" for="Hnombres">Nombres</label>
+                        <input type="text" class="form-control rounded-left" id="Hnombres" name="Hnombres" required
+                            autocomplete="off">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label-control" for="Hapellidos">Apellidos</label>
+                        <input type="text" class="form-control rounded-left" id="Hapellidos" name="Hapellidos" required
+                            autocomplete="off">
+
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label-control" for="Hcontra">Contraseña</label>
+                        <input type="password" class="form-control rounded-left" id="Hcontra" name="Hcontra" required
+                            autocomplete="off">
+
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label-control" for="Hcontras">Repita Contraseña</label>
+                        <input type="password" class="form-control rounded-left" id="Hcontras" name="Hcontras" required
+                            autocomplete="off">
+
+                    </div>
+
+	            <div class="form-group d-md-flex">
+	            	<div class="w-50">
+								</div>
+								<div class="w-50 text-md-right">
+									<a href="/login">Ya tienes cuenta</a>
+								</div>
+	            </div>
+	            <div class="form-group">
+	            	<button type="submit" class="btn btn-primary rounded submit p-3 px-5">Registrarme</button>
+	            </div>
+	          </form>
+	        </div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	</body>
+</html>
+
+
+{% endblock %}
